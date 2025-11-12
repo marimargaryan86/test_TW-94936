@@ -38,7 +38,6 @@ object Build : BuildType({
     name = "Build"
 
     vcs {
-        root(DslContext.settingsRoot)
         root(HttpsGithubComMarimargaryan86playwrightExamplesGit)
     }
 
