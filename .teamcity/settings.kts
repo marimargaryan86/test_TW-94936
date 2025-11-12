@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
@@ -39,6 +40,14 @@ object Build : BuildType({
 
     vcs {
         root(HttpsGithubComMarimargaryan86playwrightExamplesGit)
+    }
+
+    steps {
+        script {
+            name = "sleep"
+            id = "sleep"
+            scriptContent = "sleep 10"
+        }
     }
 
     triggers {
